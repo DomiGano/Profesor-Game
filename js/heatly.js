@@ -19,3 +19,18 @@ function dmg() {
 
 }
 
+function heal() {
+    hp = hp + 5;
+
+    if(hp <= 100) {
+    document.querySelector(".redbar").style.width = hp + "%";
+    mainhpBar.querySelector("p").innerText = "HP " + hp + "%"
+    document.querySelector("#myDiv").classList.remove("grave");
+    } if(hp > 100) {
+        hp = 100;
+        document.querySelector(".redbar").style.width = hp + "%";
+        mainhpBar.querySelector("p").innerText = "HP " + hp + "%"
+    }
+
+}
+
