@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/950db007d6.js" crossorigin="anonymous"></script>    
+    <title>Testowe JS</title>
+</head>
+<body>
+    <header>
+    <div id="myDiv" class="dProf pro" onclick="dmg()"></div>
+    <h2>By poruszać Profesorem użyj strzałek!</h2>
+    <h2><i class="fa-solid fa-circle-chevron-up" style="margin: 5px 10px;"></i>
+        <i class="fa-solid fa-circle-chevron-left" style="margin: 5px 10px;"></i>
+        <i class="fa-solid fa-circle-chevron-down" style="margin: 5px 10px;"></i>
+        <i class="fa-solid fa-circle-chevron-right" style="margin: 5px 10px;"></i></h2>
+        <div id="hpBar" class="hpBar"><span id="redbar" class="redbar"></span><p>HP 100%</p></div>
+    </header>
+    <article class="main__article">
+        
+        <div id="container" class="container">
+            <img class="image" src="astronaut-8061095.svg">
+            <h1>ASTRONAUTA: ...</h1>
+            <button id="btn" class="btn--article btn--anim" onclick="changeContainer()">START!</button>
+                <input id="input" class="input__text" type="text">
+            <button class="btn--article" onclick="newHeader()">Ustaw imię Astronauty!</button>
+        </div>
+    </article>
+    <script src="js/app.js"></script>
+    <script src="js/heatly.js"></script>
+</body>
+</html>
