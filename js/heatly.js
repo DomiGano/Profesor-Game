@@ -12,6 +12,7 @@ function dmg() {
     document.querySelector(".redbar").style.width = hp + "%";
     mainhpBar.querySelector("p").innerText = "HP " + hp + "%"
     } else {
+        hp = 0;
         document.querySelector(".redbar").style.width = 0 + "%";
         mainhpBar.querySelector("p").innerText = "RIP";
         document.querySelector("#myDiv").classList.add("grave");
