@@ -68,9 +68,7 @@ h1 {
   animation: pleft 1.5s 0.4s steps(9) infinite;
 }
 
-.jump {
-    background-position: 0px -140px;
-}
+
 .jump:before {
   content: "Nie umiem skakać!";
   display: inline-block;

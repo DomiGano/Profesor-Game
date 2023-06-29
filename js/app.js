@@ -84,8 +84,8 @@ function changeContainer() {
       }
       if (event.keyCode === 32) { // 13 to kod klawisza Enter, możesz go zmienić na inny, jeśli to konieczne
         // Zmień klasę elementu
+        dot.classList.add('dProf');
         let delay = setTimeout(() => {
-          dot.classList.add('dProf');
           dot.classList.remove('jump');
         }, 1500)
       }
