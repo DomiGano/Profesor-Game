@@ -20,8 +20,8 @@ function dmg() {
 
 }
 
-function heal() {
-    hp = hp + 5;
+function heal(x) {
+    hp = hp + x;
 
     if(hp <= 100) {
     document.querySelector(".redbar").style.width = hp + "%";

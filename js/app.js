@@ -48,7 +48,7 @@ function changeContainer() {
           break;
           case 32: // Down arrow key
           dot.classList.remove('dprof');
-          dot.className = ("jump");
+          dot.classList.add("jump");
           break;
       }
 
@@ -87,6 +87,6 @@ function changeContainer() {
         let delay = setTimeout(() => {
           dot.classList.add('dProf');
           dot.classList.remove('jump');
-        }, 1000)
+        }, 1500)
       }
     });
