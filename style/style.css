@@ -251,15 +251,15 @@ h1 {
   }
 
 .hpBar {
-  top: 40px;
-  left: 10px;
-  max-width: 300px;
+  top: 1vh;
+  right: 1vh;
+  width: 300px;
   padding: 5px 50px;
-  position: relative;
+  position: absolute;
   text-align: center;
   color: white;
   background-color: rgb(63, 56, 47);
-  border: 6px solid black;
+  border: 3px solid white;
   z-index: 2;
 }
 
