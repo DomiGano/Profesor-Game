@@ -284,3 +284,14 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.profDMG {
+  color: crimson;
+  position: absolute;
+  top: -40px;
+  right: -55px;
+  background-color: white;
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  text-align: center;
+}
