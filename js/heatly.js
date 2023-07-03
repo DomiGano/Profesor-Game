@@ -6,16 +6,23 @@ let dmgMin = 1;
 let dmgMax = 10;
 
 function dmg() {
-    hp = hp - Math.floor(Math.random() * (dmgMax - dmgMin +1) +1);
+    let dmg = Math.floor(Math.random() * (dmgMax - dmgMin +1) +1);
 
+    hp = hp - dmg
+    
     if(hp > 0) {
     document.querySelector(".redbar").style.width = hp + "%";
     mainhpBar.querySelector("p").innerText = "HP " + hp + "%"
+    console.log(dmg)
     } else {
+        dmg = dmg + hp;
         hp = 0;
         document.querySelector(".redbar").style.width = 0 + "%";
         mainhpBar.querySelector("p").innerText = "RIP";
         document.querySelector("#myDiv").classList.add("grave");
+        if(dmg > 0) {
+            console.log(dmg);
+        }
     }
 
 }
