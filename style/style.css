@@ -20,6 +20,7 @@ h2 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #4B856C;
   padding: 10px;
+  user-select: none;
 }
 
 .main__article {
@@ -293,4 +294,5 @@ h1 {
   border-radius: 15px;
   border-bottom-left-radius: 0px;
   text-align: center;
+  user-select: none;
 }

@@ -20,7 +20,7 @@ function dmg() {
     setTimeout(function(){
         dmgText.innerText = " "
         dmgText.style.padding = "0px";
-    },1000);
+    },3000);
     } else {
         dmg = dmg + hp;
         hp = 0;
@@ -55,7 +55,7 @@ function heal(x) {
     setTimeout(function(){
         dmgText.innerText = " "
         dmgText.style.padding = "0px";
-    },2000);
+    },4000);
     } if(hp > 100) {
         hp = 100;
         document.querySelector(".redbar").style.width = hp + "%";
@@ -67,7 +67,7 @@ function heal(x) {
     setTimeout(function(){
         dmgText.innerText = " "
         dmgText.style.padding = "0px";
-    },2000);        
+    },4000);        
     }
 }
 
