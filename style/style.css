@@ -250,12 +250,16 @@ h1 {
     to {background: url(../earth-1756274_1920.jpg);}
   }
 
+.bars {
+  display: flex;
+  justify-content: center;
+}
+
 .hpBar {
-  top: 1vh;
-  right: 1vh;
-  width: 300px;
+  bottom: -5vh;
+  width: 400px;
   padding: 5px 50px;
-  position: absolute;
+  position: relative;
   text-align: center;
   color: white;
   background-color: rgb(63, 56, 47);
