@@ -26,10 +26,12 @@
         <button class="heal passiveHeal" onclick="autoHeal(1,2)"><i class="fa-solid fa-briefcase-medical"></i><p>PASSIVE HEAL</p></button>
     </div>
     </footer>
-    <div class="DMGbuttons">
+    <div class="DMGinfo">
     <p class="actualDMG">AKTUALNE MAX DMG: 10</p>
-    <button onclick="moreDMG(1)">ADD MAX DMG</button>
-    <button onclick="lessDMG(1)">DOWNGRADE MAX DMG</button>
+    <div class="dmgButtons">
+    <button class="dmgButton" onclick="moreDMG(1)"><i class="fa-solid fa-square-plus"></i><p>ADD MAX DMG</p></button>
+    <button class="dmgButton" onclick="lessDMG(1)"><i class="fa-solid fa-square-minus"></i><p>DOWNGRADE MAX DMG</p></button>
+    </div>
     </div>
     <script src="js/app.js"></script>
     <script src="js/heatly.js"></script>
