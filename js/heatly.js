@@ -73,3 +73,9 @@ function heal(x) {
 
 }
 
+function autoHeal(value, time) {
+    setInterval(function(){
+        heal(value)
+    },time * 1000)
+}
+
