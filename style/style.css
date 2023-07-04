@@ -8,6 +8,8 @@ body {
   background-color: #000506;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -256,4 +258,17 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 10vh;
+}
+
+.actualDMG {
+  margin: 2vh;
+  color: red;
+  text-align: center;
+}
+
+.DMGbuttons {
+  margin: 5vh auto;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
 }

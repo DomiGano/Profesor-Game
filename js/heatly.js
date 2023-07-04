@@ -6,6 +6,21 @@ let hp = 100;
 let dmgMin = 1;
 let dmgMax = 10;
 
+function moreDMG(x) {
+    dmgMax = dmgMax + x;
+    document.querySelector(".actualDMG").innerText = "AKTUALNE MAX DMG: " + dmgMax;
+}
+
+function lessDMG(x) {
+    if(dmgMax < 0) {
+        dmgMax = 0;
+        document.querySelector(".actualDMG").innerText = "AKTUALNE MAX DMG: " + dmgMax;
+    } else {
+        dmgMax = dmgMax - x;
+        document.querySelector(".actualDMG").innerText = "AKTUALNE MAX DMG: " + dmgMax;
+    }
+}
+
 function dmg() {
     let dmg = Math.floor(Math.random() * (dmgMax - dmgMin +1) +1);
 
