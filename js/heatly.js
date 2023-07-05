@@ -1,13 +1,39 @@
 let hpBar = document.querySelector("#redbar");
 let mainhpBar = document.querySelector("#hpBar");
 let dmgText = document.querySelector(".profDMG");
+let mainexpBar = document.querySelector("#expBar");
 
+let lvl = 1;
 let maxhp = 100;
 let nowhp = maxhp;
 let dmgMin = 1;
 let dmgMax = 10;
+let nowExp = 0;
+let goalExp= 100;
 
 mainhpBar.querySelector("p").innerText = nowhp + " / " + maxhp;
+mainexpBar.querySelector("p").innerText = "EXP " + nowExp + " / " + goalExp;
+
+function addExp(expValue) {
+    if(nowExp < goalExp) {
+    nowExp = nowExp + expValue;
+    mainexpBar.querySelector("p").innerText = "EXP " + nowExp + " / " + goalExp;
+    document.querySelector(".greenbar").style.width = ((nowExp * 100) / goalExp) + "%";
+    } if(nowExp == goalExp) {
+        lvl++;
+        nowExp = 0;
+        goalExp = Math.floor(goalExp * 1.25);
+        mainexpBar.querySelector("p").innerText = "EXP " + nowExp + " / " + goalExp;
+        document.querySelector(".greenbar").style.width = ((nowExp * 100) / goalExp) + "%";
+    } if(nowExp > goalExp) {
+        lvl++;
+        nowExp = nowExp - goalExp;
+        goalExp = Math.floor(goalExp * 1.25);
+        mainexpBar.querySelector("p").innerText = "EXP " + nowExp + " / " + goalExp;
+        document.querySelector(".greenbar").style.width = ((nowExp * 100) / goalExp) + "%";
+    }
+}
+
 
 function moreHP() {
     maxhp = maxhp + 10;
