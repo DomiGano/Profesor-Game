@@ -2,9 +2,19 @@ let hpBar = document.querySelector("#redbar");
 let mainhpBar = document.querySelector("#hpBar");
 let dmgText = document.querySelector(".profDMG");
 
-let hp = 100;
+let maxhp = 100;
+let nowhp = maxhp;
 let dmgMin = 1;
 let dmgMax = 10;
+
+mainhpBar.querySelector("p").innerText = nowhp + " / " + maxhp;
+
+function moreHP() {
+    maxhp = maxhp + 10;
+    nowhp = maxhp;
+    document.querySelector(".redbar").style.width = ((nowhp * 100) / maxhp) + "%";
+    mainhpBar.querySelector("p").innerText = nowhp + " / " + maxhp;
+}
 
 function moreDMG(x) {
     dmgMax = dmgMax + x;
@@ -24,11 +34,11 @@ function lessDMG(x) {
 function dmg() {
     let dmg = Math.floor(Math.random() * (dmgMax - dmgMin +1) +1);
 
-    hp = hp - dmg
+    nowhp = nowhp - dmg
     
-    if(hp > 0) {
-    document.querySelector(".redbar").style.width = hp + "%";
-    mainhpBar.querySelector("p").innerText = "HP " + hp + "%";
+    if(nowhp > 0) {
+    document.querySelector(".redbar").style.width = ((nowhp * 100) / maxhp) + "%";
+    mainhpBar.querySelector("p").innerText = nowhp + " / " + maxhp;
     dmgText.style.color = "red";
     dmgText.style.padding = "5px";
     dmgText.innerText = "-" + dmg +" hp";
@@ -37,8 +47,8 @@ function dmg() {
         dmgText.style.padding = "0px";
     },3000);
     } else {
-        dmg = dmg + hp;
-        hp = 0;
+        dmg = dmg + nowhp;
+        nowhp = 0;
         document.querySelector(".redbar").style.width = 0 + "%";
         mainhpBar.querySelector("p").innerText = "RIP";
         document.querySelector("#myDiv").classList.add("grave");
@@ -55,14 +65,15 @@ function dmg() {
 
 }
 
+
 function heal(x) {
-    let beforeHeal = hp
-    hp = hp + x;
+    let beforeHeal = nowhp;
+    nowhp = nowhp + x;
     
 
-    if(hp <= 100) {
-    document.querySelector(".redbar").style.width = hp + "%";
-    mainhpBar.querySelector("p").innerText = "HP " + hp + "%"
+    if(nowhp <= 100) {
+    document.querySelector(".redbar").style.width = ((nowhp * 100) / maxhp) + "%";
+    mainhpBar.querySelector("p").innerText = nowhp + " / " + maxhp;
     document.querySelector("#myDiv").classList.remove("grave");
     dmgText.style.color = "green";
     dmgText.style.padding = "5px";
@@ -71,14 +82,14 @@ function heal(x) {
         dmgText.innerText = " "
         dmgText.style.padding = "0px";
     },4000);
-    } if(hp > 100) {
-        hp = 100;
-        document.querySelector(".redbar").style.width = hp + "%";
-        mainhpBar.querySelector("p").innerText = "HP " + hp + "%";
+    } if(nowhp > 100) {
+        nowhp = maxhp;
+        document.querySelector(".redbar").style.width = ((nowhp * 100) / maxhp) + "%";
+        mainhpBar.querySelector("p").innerText = nowhp + " / " + maxhp;
         if(beforeHeal < 100){
         dmgText.style.color = "green";
         dmgText.style.padding = "5px";
-        dmgText.innerText = "+" + (hp - beforeHeal) +" hp";
+        dmgText.innerText = "+" + (nowhp - beforeHeal) +" hp";
     setTimeout(function(){
         dmgText.innerText = " "
         dmgText.style.padding = "0px";
