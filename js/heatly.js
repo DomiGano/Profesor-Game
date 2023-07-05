@@ -2,6 +2,7 @@ let hpBar = document.querySelector("#redbar");
 let mainhpBar = document.querySelector("#hpBar");
 let dmgText = document.querySelector(".profDMG");
 let mainexpBar = document.querySelector("#expBar");
+let lvltext = document.querySelector("#lvl");
 
 let lvl = 1;
 let maxhp = 100;
@@ -25,12 +26,18 @@ function addExp(expValue) {
         goalExp = Math.floor(goalExp * 1.25);
         mainexpBar.querySelector("p").innerText = "EXP " + nowExp + " / " + goalExp;
         document.querySelector(".greenbar").style.width = ((nowExp * 100) / goalExp) + "%";
+        lvltext.innerText = "LvL. " + lvl;
+        moreHP(10);
+        moreDMG(2);
     } if(nowExp > goalExp) {
         lvl++;
         nowExp = nowExp - goalExp;
         goalExp = Math.floor(goalExp * 1.25);
         mainexpBar.querySelector("p").innerText = "EXP " + nowExp + " / " + goalExp;
         document.querySelector(".greenbar").style.width = ((nowExp * 100) / goalExp) + "%";
+        lvltext.innerText = "LvL. " + lvl;
+        moreHP(10);
+        moreDMG(2);
     }
 }
 
